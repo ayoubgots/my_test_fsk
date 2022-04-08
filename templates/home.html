@@ -1,6 +1,7 @@
 {%extends "base.html"%}
 
     {%block produit%}
+    <div class="containerhome">
             {%for p in prods%}
             <div class="{{p.titre}} chaque">
                 <div>
@@ -10,6 +11,7 @@
                 <p>{{p.description}}</p>
             </div> 
             {%endfor%}
+    </div>
             
     {%endblock produit%}
     

@@ -1,4 +1,6 @@
-from flask import Flask,render_template
+
+from socket import MsgFlag
+from flask import Flask,render_template,request
 from datetime import date
 
 x=date.today()
@@ -64,9 +66,15 @@ def index():
 @app.route('/about')
 def home():
     return render_template("about.html",now=x,title="about")
-
+messages=[]
 @app.route('/contact')
 def k():
+    name=request.form.get("name")
+    email=request.form.get("email")
+    message=request.form.get("message")
+    msg={'name':name,'email':email,'message':message}
+    messages.append(msg)
+    print(messages)
     return render_template("contact.html",now=x,title="contact")
 
 if __name__=='__main__':

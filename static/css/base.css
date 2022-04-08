@@ -26,7 +26,7 @@ header{
     background-image: url("/static/image/photo-1453728013993-6d66e9c9123a.png");
     background-position: center;
     background-size: cover;
-    min-height: 30vh;
+    min-height: 20vh;
     color: white;
 }
 
@@ -54,13 +54,19 @@ section img{
     width: 300px;
     height: 300px;
 }
-.container{
+.containerhome{
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 1rem;
     
  
+}
+.containercontact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
 }
 .chaque{
     display: flex;
@@ -75,4 +81,22 @@ span{
 h1{
     color: orange;
     margin-left: 2rem;
+}
+
+
+/* **************contact*********** */
+
+.myform{
+border: 1px solid black;
+border-radius: 40px;
+padding: 2rem;
+background-color: grey;
+box-shadow: 0 0 18px rgba(0,0,0,0.5);
+}
+.submit-btn{
+    padding: 1.1rem;
+    background-color: red;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border-radius: 30px;
+    cursor: pointer;
 }
