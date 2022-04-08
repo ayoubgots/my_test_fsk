@@ -1,7 +1,20 @@
 {%extends "base.html"%}
 
+    {%block produit%}
+            {%for p in prods%}
+            <div class="{{p.titre}} chaque">
+                <div>
+                    <img src="../static/image/{{p.image}}">
+                </div>
+                <h1><span>{{p.titre}}</span></h1>
+                <p>{{p.description}}</p>
+            </div> 
+            {%endfor%}
+            
+    {%endblock produit%}
+    
     {% block content%}
-    <div>
-        home
-    </div>
+       <div>
+           home
+       </div>
     {% endblock content%}
