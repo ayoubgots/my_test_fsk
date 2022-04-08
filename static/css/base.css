@@ -1,0 +1,38 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 2rem;
+}
+li{
+    list-style:none;
+}
+ul{
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: red;
+}
+
+/* *********************** obl ***************** */
+header{
+    background-image: url("/static/image/photo-1453728013993-6d66e9c9123a.png");
+    background-position: center;
+    background-size: cover;
+    min-height: 30vh;
+    color: white;
+}
+
+ul{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 6vh;
+}
