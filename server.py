@@ -1,4 +1,3 @@
-
 from socket import MsgFlag
 from sqlite3 import dbapi2
 from flask_sqlalchemy import SQLAlchemy
@@ -6,59 +5,12 @@ from flask import Flask,render_template,request
 from datetime import date
 import sqlalchemy
 
+# from form import Registrationform,Loginfrom
 
 x=date.today()
 
-laptop=[
-    {
-        "titre" :"hwawei",
-        "image" :"hwawei.png",
-        "description" :"blabalbalabl"    
-    },
-    {
-        "titre" :"samsung",
-        "image" :"samsung.png",
-        "description" :"lahawla"    
-    },
-    {
-        "titre" :"mac",
-        "image" :"mac.png",
-        "description" :"mac ya khouya"    
-    }, 
-    {
-        "titre" :"ayoub",
-        "image" :"mac.png",
-        "description" :"mac ya khouya"    
-    }, 
-    {
-        "titre" :"ayoub",
-        "image" :"mac.png",
-        "description" :"mac ya khouya"    
-    }, 
-    {
-        "titre" :"ayoub",
-        "image" :"mac.png",
-        "description" :"mac ya khouya"    
-    }, 
-    {
-        "titre" :"ayoub",
-        "image" :"mac.png",
-        "description" :"mac ya khouya"    
-    }, 
-    {
-        "titre" :"ayoub",
-        "image" :"mac.png",
-        "description" :"mac ya khouya"    
-    }, 
-    
-]
-
-
-
-
 app = Flask(__name__)
 
-messages=[]
 
 app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///store.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
@@ -77,6 +29,17 @@ class Message(db.Model):
     message=db.Column(db.Text,nullable=False)
     mail=db.Column(db.String(20),nullable=False)
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+laptop=products.query.all()
 
 @app.route('/')
 def d():
@@ -98,10 +61,11 @@ def k():
     email=request.form.get("email")
     message=request.form.get("message")
     msg={'name':name,'email':email,'message':message}
-    messages.append(msg)
-    print(messages)
     return render_template("contact.html",now=x,title="contact")
 
+@app.route('/signup')
+def login():
+    return render_template('')
 if __name__=='__main__':
     app.run(debug=True)
     
