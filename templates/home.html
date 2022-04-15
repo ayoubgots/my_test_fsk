@@ -7,21 +7,14 @@
                 <div>
                     <img src="../static/image/{{p.image}}">
                 </div>
-                <h1><span>{{p.titre}}</span></h1>
-                <p>{{p.description}}</p>
+                <h6><span>{{p.titre}}</span></h6>
                 <div class="price_addbtn">
-                    <p>{{p.prix}}</p>
+                    <p class="price-color">{{p.prix}}</p>
                     <a href="#"><i class='bx bx-cart-add'></i></a>
                 </div>
-                
             </div> 
             {%endfor%}
     </div>
             
     {%endblock produit%}
     
-    {% block content%}
-       <div>
-           home
-       </div>
-    {% endblock content%}

@@ -16,66 +16,80 @@ li{
 ul{
     text-decoration: none;
     float: right;
+    margin-top: 1rem;
 }
 ul  a{
     text-decoration: none;
-    color: white;
+    color: black;
     padding: 0.4rem;
     margin: 1rem 2rem;
+}
+ul a:hover{
+   text-decoration: underline;
+    color: gray;
 }
 
 /* *********************** obl ***************** */
 header{
-    background-color:black;
     min-height: 8vh;
+    width: 100;
+    
+    /* border: 1px solid black; */
     color: black;
-    box-shadow: 0 0 18px #0000;
-}
-
-nav a:hover{
-    background-color:grey;
-    color: black;
+    box-shadow: 0 0  18px rgba(0,0,0,0.5)
 }
 footer{
     position: absolute;
     background-color: black;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     text-align: center;
     color: white;
 }
 section img{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
 }
 .containerhome{
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 1rem;
+    grid-auto-rows: 400px;
 }
-.containercontact{
+.center{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 70vh;
+    width: 100vw;
+    flex-direction: column;
+    /* background-color: red; */
 }
 .chaque{
-    background-color: grey;
+    background-color: #ffffff;
+background-image: -webkit-linear-gradient(180deg, #ffffff 64%, #000000 100%);
+background-image: -moz-linear-gradient(180deg, #ffffff 64%, #000000 100%);
+background-image: -o-linear-gradient(180deg, #ffffff 64%, #000000 100%);
+background-image: linear-gradient(180deg, #ffffff 64%, #000000 100%);
+
+    
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
+    justify-content: space-evenly;
     border: 1px solid black; 
     border-radius: 40px;   
-
+    box-shadow: 0 0 18px rgba(0,0,0,0.5);
 }
 span{
     text-align: center;
 }
-h1{
-    color: orange;
-    margin-left: 2rem;
+h6{
+    color: black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 1rem;
 }
 
 
@@ -96,12 +110,37 @@ box-shadow: 0 0 18px rgba(0,0,0,0.5);
     cursor: pointer;
 }
 
-
-
 .price_addbtn{
     display: flex;
     align-items: center;
     justify-content: space-around;
    
     min-width: 100%;
+}
+
+/* **************** panier *************** */
+.def{
+    width:  60vw ;
+    height: 6vh;
+    border: 2px solid black;
+    box-shadow: 0 0 0  0 20px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    color: grey;
+}
+.box-panier{
+    height: 50vh;
+    width: 60vw;
+    /* border: 1px solid black;*/
+    box-shadow:  0 0 20px rgba(0,0,0,0.5);
+     
+}
+.bx {
+    color: yellow;
+
+}
+.price-color{
+    color:white;
 }

@@ -12,7 +12,7 @@ x=date.today()
 app = Flask(__name__)
 
 
-app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///store.db'
+app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///mystore.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
 db=SQLAlchemy(app)
 
@@ -37,9 +37,9 @@ def d():
     return render_template("home.html",now=x,title="home")
 
 
-@app.route('/home')
-def index():
-    return render_template("home.html",now=x,title="home",prods=laptop)
+# @app.route('/home')
+# def index():
+#     return render_template("home.html",now=x,title="home",prods=laptop)
 
 
 @app.route('/about')
@@ -57,6 +57,9 @@ def k():
 @app.route('/signup')
 def login():
     return render_template('')
+# @app.route('/panier')
+# def panier():
+#     return render_template("panier.html")
 if __name__=='__main__':
     app.run(debug=True)
     
