@@ -9,7 +9,11 @@
                 </div>
                 <h1><span>{{p.titre}}</span></h1>
                 <p>{{p.description}}</p>
-                <p>{{p.prix}}</p>
+                <div class="price_addbtn">
+                    <p>{{p.prix}}</p>
+                    <a href="#"><i class='bx bx-cart-add'></i></a>
+                </div>
+                
             </div> 
             {%endfor%}
     </div>

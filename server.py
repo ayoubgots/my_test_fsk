@@ -30,15 +30,6 @@ class Message(db.Model):
     mail=db.Column(db.String(20),nullable=False)
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 laptop=products.query.all()
 
 @app.route('/')

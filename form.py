@@ -16,6 +16,6 @@ class Loginfrom(FlaskForm):
     email=StringField('email:',validators=[DataRequired(),Email()])
     password=PasswordField('password:',validators=[DataRequired()])
     confirm_passowrd=PasswordField('confirm password',validators=[DataRequired(),EqualTo('password')])
-    remember=BooleanField("remember me ")
+    remember=BooleanField("remember me")
     submit=SubmitField('log in')
     
