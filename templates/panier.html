@@ -9,6 +9,16 @@
         <p>del</p>
     </div>
     <div class="box-panier">
+         {%for aj in carte%}
+        <div class="prd_added">
+            <div class="item" >
+                <img src="../static/image/{{aj.image}}" >
+            </div>
+            <p class="item">{{aj.titre}}</p>
+            <p class="item">{{aj.prix}}</p>
+            <a href="" class="item"><i class='bx bx-box bx-flashing' style='color:#ff0000'  ></i></a>
+        </div>
+            {%endfor%} 
     </div>
 </div>
 {% endblock produit%}
