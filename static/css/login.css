@@ -1,0 +1,29 @@
+.myform{
+    height: 60vh;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 18px rgba(0,0,0,0.4);
+    background-color: black;
+    /* clip-path: circle(90.4% at 16% 75%); */
+    border-radius: 30px;
+    justify-content: space-around;
+
+}
+#username,#password{
+    width: 60%;
+    height: 10%;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+#username:hover,#password:hover{
+    border-bottom: 5px solid white;
+}
+.submit{
+    width: 45%;
+    height: 10%;
+}

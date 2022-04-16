@@ -3,22 +3,20 @@
 {% block produit%}
 <div class="center">
     <div class="def">
-        <p>product</p>
-        <p>name</p>
-        <p>price</p>
-        <p>del</p>
+        <p>Product</p>
     </div>
     <div class="box-panier">
-         {%for aj in carte%}
+        {%for j in datarow%}
         <div class="prd_added">
             <div class="item" >
-                <img src="../static/image/{{aj.image}}" >
+                <img src="../static/image/{{j.image}}" >
             </div>
-            <p class="item">{{aj.titre}}</p>
-            <p class="item">{{aj.prix}}</p>
-            <a href="" class="item"><i class='bx bx-box bx-flashing' style='color:#ff0000'  ></i></a>
+            <p class="item">{{j.titre}}</p>
+            <p class="item">{{j.prix}}</p>
+            <p class="item">{{carte[j.id]}}</p>
+            <a href="/remove/{{datarow.index(j)}}" class="item"><i class='bx bxs-trash-alt bx-flashing' style='color:#ff0000'  ></i></i></a>
         </div>
-            {%endfor%} 
+        {%endfor%}  
     </div>
 </div>
 {% endblock produit%}

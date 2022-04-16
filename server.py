@@ -6,10 +6,10 @@ from datetime import date
 # from form import Registrationform,Loginfrom
 
 x=date.today()
-carte=[]
+carte={}
+row_byid=[]
 
 app = Flask(__name__)
-
 
 app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///mystore.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
@@ -38,25 +38,34 @@ def default():
 
 @app.route('/home')
 def index():
+    print(row_byid)
     return render_template("home.html",now=x,title="home",prods=laptop)
-
 @app.route('/add/<id>')
+
 def add(id):
     row=products.query.get(id)
-    carte.append(row)
-    return render_template("panier.html",carte=carte,prod=laptop)
+    id=int(id)
+    if( id not in carte.keys()):
+        carte[id]=1
+        row_byid.append(row)
+    else:
+        carte[id]+=1
+    return render_template("panier.html",datarow=row_byid,carte=carte,prods=laptop)
+ 
     
-    
+@app.route('/remove/<int:id>')
+def remove(id):
+    row_byid.pop(id)
+    print(row_byid)
+    return render_template("panier.html",datarow=row_byid,carte=carte)
+          
 @app.route('/about')
 def about():
     return render_template("about.html",now=x,title="about")
 
-@app.route('/contact')
+@app.route('/login')  
 def contact():
-    name=request.form.get("name")
-    email=request.form.get("email")
-    message=request.form.get("message")
-    return render_template("contact.html",now=x,title="contact")
+    return render_template("login.html")
 
 @app.route('/signup')
 def login():

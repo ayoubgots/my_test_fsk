@@ -1,0 +1,39 @@
+.def{
+    width:  60vw ;
+    height: 6vh;
+    border: 2px solid black;
+    box-shadow: 0 0 0  0 20px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+}
+.box-panier{
+    height: 50vh;
+    width: 60vw;
+    box-shadow:  0 0 20px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+}
+.prd_added{
+    background-color: rgb(218, 216, 216);
+    height: 10%;
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    font-size: 20px;
+    grid-gap: 10px;
+}
+.prd_added .item{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.prd_added img{
+    width: 25px;
+    height: 25px;
+}
