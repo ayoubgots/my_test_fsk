@@ -1,5 +1,5 @@
 .myform{
-    height: 60vh;
+    height: 80vh;
     width: 30vw;
     display: flex;
     align-items: center;
@@ -24,6 +24,14 @@
     border-bottom: 5px solid white;
 }
 .submit{
+    font-family:'Times New Roman', Times, serif ;
     width: 45%;
-    height: 10%;
+    height: 5%;
+    cursor:pointer ;
+    transition: all 0.7s ease;
+    font-size: 1.1rem;
+}
+
+.submit:hover{
+    transform: scale(1.1);
 }

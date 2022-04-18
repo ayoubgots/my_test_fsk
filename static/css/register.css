@@ -1,0 +1,15 @@
+#email,#cpassword{
+    width: 60%;
+    height: 10%;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+#email:hover,#cpassword:hover{
+    border-bottom: 5px solid white;
+}
+.regi-img{
+    height: 150px;
+}
