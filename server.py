@@ -43,8 +43,8 @@ def default():
 def index():
     print(row_byid)
     return render_template("home.html",now=x,title="home",prods=laptop)
-@app.route('/add/<id>')
 
+@app.route('/add/<id>')
 def add(id):
     row=products.query.get(id)
     id=int(id)
@@ -54,8 +54,7 @@ def add(id):
     else:
         carte[id]+=1
     return render_template("panier.html",datarow=row_byid,carte=carte,prods=laptop,now=x)
- 
-    
+   
 @app.route('/remove/<int:id>')
 def remove(id):
     row_byid.pop(id)
@@ -68,6 +67,8 @@ def about():
 
 @app.route('/login')  
 def contact():
+    user=request.args.get('username')
+    print(user)
     return render_template("login.html",now=x)
 
 @app.route('/register')

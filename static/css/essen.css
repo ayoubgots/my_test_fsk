@@ -40,8 +40,6 @@ h6{
 header{
     min-height: 8vh;
     width: 100;
-    
-    /* border: 1px solid black; */
     color: black;
     box-shadow: 0 0  18px rgba(0,0,0,0.5)
 }
