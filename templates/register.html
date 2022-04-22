@@ -1,7 +1,36 @@
 {%extends "base.html"%}
 
 {% block produit%}
-    <div class="center">
+
+<div class="center">
+  <form action="" class="myform" method="post">
+  {{form.hidden_tag()}}
+  <img class="regi-img"src="../static/image/register.png" alt="">
+  {{form.username(class="username",placeholder="USERNAME")}}
+    {% if form.username.errors %}
+      {{form.username(class="invalid",placeholder="USERNAME")}}
+    {% endif %}
+  {{form.password(class="password",placeholder="PASSWORD")}}
+  {{form.password(class="cpassword",placeholder="CONFIRME PASSWORD")}}
+  {{form.submit(class="submit")}}
+  <small class="link-to-login">
+    Alreaedy have an account ? <a href="{{url_for('login')}}">Sing In</a>
+  </small>
+  </form> 
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="center">
 
       <form  class="myform" method="post">
           <img class="regi-img"src="../static/image/register.png" alt="">
@@ -11,5 +40,5 @@
           <input type="password" name="cpassword" id="cpassword" placeholder="COMFIRM PASSWORD">
           <input type="submit" name="submit" class="submit">
       </form> 
-    </div>
+    </div> -->
 {% endblock produit%}

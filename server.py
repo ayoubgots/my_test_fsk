@@ -1,11 +1,10 @@
 from socket import MsgFlag
 from sqlite3 import dbapi2
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask,render_template,request
+from flask import Flask, flash,render_template,request,redirect, url_for
 from flask_login import UserMixin
 from datetime import date  
-
-# from form import Registrationform,Loginfrom
+from form import Registrationform,Loginfrom
 
 x=date.today()
 carte={}
@@ -61,19 +60,20 @@ def remove(id):
     print(row_byid)
     return render_template("panier.html",datarow=row_byid,carte=carte,now=x)
           
-@app.route('/about')
-def about():
-    return render_template("about.html",now=x,title="about")
 
-@app.route('/login')  
-def contact():
-    user=request.args.get('username')
-    print(user)
-    return render_template("login.html",now=x)
+@app.route('/login', methods=["POST","GET"])  
+def login():
+    form=Loginfrom()
+    return render_template("login.html",now=x,form=form)
 
-@app.route('/register')
+@app.route('/register', methods=["POST","GET"])
 def register():
-    return render_template("register.html",now=x)
+    form=Registrationform()
+    if form.validate_on_submit():
+        print("done")
+        flash(f"user registed successfuly {form.username.data}!")
+        return redirect(url_for('home'))
+    return render_template("register.html",now=x,form=form)
 
 
 @app.route('/panier')

@@ -13,3 +13,18 @@
 .regi-img{
     height: 150px;
 }
+form small{
+    color: white;
+    font-size: 1rem;
+}
+form a{
+    color:rgb(39,190,202);
+}
+.invalid{
+    width: 60%;
+    height: 10%;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid red;
+}

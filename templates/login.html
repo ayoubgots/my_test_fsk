@@ -1,7 +1,29 @@
 {%extends "base.html"%}
 
 {% block produit%}
+
     <div class="center">
+      <form action="/login" class="myform" method="post">
+        {{ form.hidden_tag() }}
+        <img src="../static/image/user.png" alt="">
+        {{form.username(id="username",placeholder="USERNAME")}}
+        {{form.password(id="password",placeholder="PASSWORD")}}
+        <div class="remember-case">
+        {{form.remember(class="remember")}} {{form.remember.label}}
+        </div>
+        {{form.submit(class="submit")}}
+      </form>
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- <div class="center">
 
       <form  action="/login" class="myform">
           <img src="../static/image/user.png" alt="">
@@ -9,5 +31,5 @@
           <input type="password" name="password" id="password" placeholder="PASSWORD">
           <input type="submit" name="submit" class="submit">
       </form> 
-    </div>
+    </div> -->
 {% endblock produit%}
