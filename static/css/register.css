@@ -20,11 +20,32 @@ form small{
 form a{
     color:rgb(39,190,202);
 }
-.invalid{
-    width: 60%;
-    height: 10%;
-    color: white;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid red;
+/* *************************flash *********************** */
+.success{
+    width: 30vw;
+    height: 4vh;
+    background-color: green;
+    box-shadow: 0 0 18px rgba(0,0,0,0.5);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    border-radius: 40px;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.error{
+    width: 30vw;
+    height: 4vh;
+    background-color: red;
+    box-shadow: 0 0 18px rgba(0,0,0,0.5);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    border-radius: 40px;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

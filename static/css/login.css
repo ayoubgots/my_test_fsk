@@ -41,7 +41,5 @@
     display: flex;
     align-items: center;
     min-height: 2rem;
-    /* background-color: red; */
-    width: 60%;
-    
+    width: 60%;  
 }

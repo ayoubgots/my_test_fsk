@@ -4,41 +4,15 @@
 
 <div class="center">
   <form action="" class="myform" method="post">
-  {{form.hidden_tag()}}
-  <img class="regi-img"src="../static/image/register.png" alt="">
-  {{form.username(class="username",placeholder="USERNAME")}}
-    {% if form.username.errors %}
-      {{form.username(class="invalid",placeholder="USERNAME")}}
-    {% endif %}
-  {{form.password(class="password",placeholder="PASSWORD")}}
-  {{form.password(class="cpassword",placeholder="CONFIRME PASSWORD")}}
-  {{form.submit(class="submit")}}
+    {{form.hidden_tag()}}
+      <img class="regi-img"src="../static/image/register.png" alt="">
+      {{form.username(class="username",placeholder="USERNAME")}}
+      {{form.password(class="password",placeholder="PASSWORD")}}
+      {{form.confirm_passowrd(id="cpassword",placeholder="CONFIRME PASSWORD")}}
+      {{form.submit(class="submit")}}
+  </form> 
   <small class="link-to-login">
     Alreaedy have an account ? <a href="{{url_for('login')}}">Sing In</a>
   </small>
-  </form> 
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <div class="center">
-
-      <form  class="myform" method="post">
-          <img class="regi-img"src="../static/image/register.png" alt="">
-          <input type="text" name="username" id="username" placeholder="USERNAME" >
-          <input type="email" name="email" id="username" placeholder="EMAIL" >
-          <input type="password" name="password" id="password" placeholder="PASSWORD">
-          <input type="password" name="cpassword" id="cpassword" placeholder="COMFIRM PASSWORD">
-          <input type="submit" name="submit" class="submit">
-      </form> 
-    </div> -->
 {% endblock produit%}

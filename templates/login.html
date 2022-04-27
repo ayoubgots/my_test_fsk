@@ -3,6 +3,19 @@
 {% block produit%}
 
     <div class="center">
+
+      
+      {% with messages = get_flashed_messages(with_categories=true)%}
+                {% if messages %}
+                    {% for category,message in messages %}
+                     <div class="{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+
       <form action="/login" class="myform" method="post">
         {{ form.hidden_tag() }}
         <img src="../static/image/user.png" alt="">
@@ -13,23 +26,6 @@
         </div>
         {{form.submit(class="submit")}}
       </form>
-
     </div>
 
-
-
-
-
-
-
-
-    <!-- <div class="center">
-
-      <form  action="/login" class="myform">
-          <img src="../static/image/user.png" alt="">
-          <input type="text" name="username" id="username" placeholder="USERNAME" >
-          <input type="password" name="password" id="password" placeholder="PASSWORD">
-          <input type="submit" name="submit" class="submit">
-      </form> 
-    </div> -->
 {% endblock produit%}
