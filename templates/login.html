@@ -2,20 +2,6 @@
 
 {% block produit%}
 
-    <div class="center">
-
-      
-      {% with messages = get_flashed_messages(with_categories=true)%}
-                {% if messages %}
-                    {% for category,message in messages %}
-                     <div class="{{ category }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-
-
       <form action="/login" class="myform" method="post">
         {{ form.hidden_tag() }}
         <img src="../static/image/user.png" alt="">
@@ -25,7 +11,9 @@
         {{form.remember(class="remember")}} {{form.remember.label}}
         </div>
         {{form.submit(class="submit")}}
+        <small class="link-to-login">
+          Need an account ? <a href="{{url_for('register')}}">Sign Up now</a>
+        </small>
       </form>
-    </div>
 
 {% endblock produit%}

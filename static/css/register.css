@@ -1,4 +1,4 @@
-#email,#cpassword{
+.email,.cpassword{
     width: 60%;
     height: 10%;
     color: white;
@@ -7,7 +7,7 @@
     border-bottom: 1px solid white;
     text-align: center;
 }
-#email:hover,#cpassword:hover{
+.email:hover,.cpassword:hover{
     border-bottom: 5px solid white;
 }
 .regi-img{
@@ -35,17 +35,15 @@ form a{
     align-items: center;
     justify-content: center;
 }
-.error{
-    width: 30vw;
-    height: 4vh;
-    background-color: red;
-    box-shadow: 0 0 18px rgba(0,0,0,0.5);
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    border-radius: 40px;
-    margin: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.invalid{
+    border-bottom-color: red;
+    
+}
+.invalid:hover{
+    border-bottom: 5px solid red;
+}
+.myform span{
+    color: red;
+    font-size: 0.8rem;
+    font-family: sans-serif;
 }

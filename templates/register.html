@@ -2,17 +2,44 @@
 
 {% block produit%}
 
-<div class="center">
   <form action="" class="myform" method="post">
     {{form.hidden_tag()}}
       <img class="regi-img"src="../static/image/register.png" alt="">
-      {{form.username(class="username",placeholder="USERNAME")}}
-      {{form.password(class="password",placeholder="PASSWORD")}}
-      {{form.confirm_passowrd(id="cpassword",placeholder="CONFIRME PASSWORD")}}
+      {% if form.username.errors%}
+          {{form.username(class="username invalid",placeholder="USERNAME")}}
+            <div>
+              {% for error in form.username.errors%}
+                  <span>{{ error}}</span>
+              {% endfor %}
+            </div>
+      {% else %}
+          {{form.username(class="username",placeholder="USERNAME")}}
+      {% endif%}
+      
+      {% if form.password.errors%}
+          {{form.password(class="password invalid",placeholder="USERNAME")}}
+            <div>
+              {% for error in form.password.errors%}
+                  <span>{{ error}}</span>
+              {% endfor %}
+            </div>
+      {% else %}
+          {{form.password(class="password",placeholder="PASSWORD")}}
+      {% endif%}
+      
+      {% if form.confirm_password.errors%}
+          {{form.confirm_password(class="cpassword invalid",placeholder="USERNAME")}}
+            <div>
+              {% for error in form.confirm_password.errors%}
+                  <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+      {% else %}
+          {{form.confirm_password(class="cpassword",placeholder="CONFIRME PASSWORD")}}
+      {% endif%}
       {{form.submit(class="submit")}}
+      <small class="link-to-login">
+        Alreaedy have an account ? <a href="{{url_for('login')}}">Sing In</a>
+      </small>
   </form> 
-  <small class="link-to-login">
-    Alreaedy have an account ? <a href="{{url_for('login')}}">Sing In</a>
-  </small>
-</div>
 {% endblock produit%}
