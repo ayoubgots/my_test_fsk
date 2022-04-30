@@ -4,7 +4,6 @@ from argon2 import hash_password
 import bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, flash ,render_template,redirect, url_for
-from flask_login import UserMixin, user_needs_refresh
 from datetime import date  
 from form import Registrationform,Loginfrom
 from flask_bcrypt import Bcrypt
@@ -15,7 +14,7 @@ row_byid=[]
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///mystore.db'
+app.config["SQLALCHEMY_DATABASE_URI"]='sqlite:///mystr.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
 app.config['SECRET_KEY']='thisismysecretkey'
 db=SQLAlchemy(app)
@@ -23,6 +22,7 @@ bcrypt=Bcrypt()
 
 
 class products(db.Model):
+    __tablename__='product'
     id=db.Column(db.Integer ,primary_key=True)
     titre=db.Column(db.String(20),nullable=False)
     description=db.Column(db.Text,nullable=False)
@@ -30,6 +30,7 @@ class products(db.Model):
     image=db.Column(db.String(20),nullable=False)
 
 class Users(db.Model):
+    __tablename__='user'
     id=db.Column(db.Integer ,primary_key=True,autoincrement=True)
     username=db.Column(db.String(20),nullable=False)
     password=db.Column(db.String(20),nullable=False)
@@ -40,7 +41,7 @@ laptop=products.query.all()
 
 @app.route('/')
 def default():
-    return render_template("home.html",now=x,title="home")
+    return render_template("home.html",now=x,title="home",prods=laptop)
 
 
 @app.route('/home')
@@ -63,7 +64,8 @@ def add(id):
 def remove(id):
     row_byid.pop(id)
     return render_template("panier.html",datarow=row_byid,carte=carte,now=x)
-          
+
+
 @app.route('/register', methods=["POST","GET"])
 def register():
     form=Registrationform()
@@ -79,12 +81,15 @@ def register():
             flash(f'User registed successfuly {form.username.data}!','success')
             return redirect('login')
     return render_template("register.html",now=x,form=form)
+
+
     
 @app.route('/login', methods=["POST","GET"])   
 def login():
     form=Loginfrom()
     if form.validate_on_submit():
-        if form.username.data == 'ayoub' and form.password.data == 'ayoubayoub':
+        user=Users.query.filter_by(username=form.username.data).first()
+        if user and bcrypt.check_password_hash(user.password,form.password.data):
             flash(f'You have been logged in MR.{form.username.data}','success')
             return redirect('panier')
         else:
